@@ -1,0 +1,9 @@
+client:
+  ticketagent:
+    address: http://localhost:9090/codenotfound/ws/helloworld
+
+server:
+  port: 9090
+
+cxf:
+  path: /codenotfound/ws
