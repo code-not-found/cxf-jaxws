@@ -18,11 +18,10 @@ public class HelloWorldClient {
 
     ObjectFactory factory = new ObjectFactory();
     Person person = factory.createPerson();
-
     person.setFirstName(firstName);
     person.setLastName(lastName);
 
-    Greeting response = (Greeting) helloWorldProxy.sayHello(person);
+    Greeting response = helloWorldProxy.sayHello(person);
 
     return response.getGreeting();
   }
