@@ -4,4 +4,4 @@
 
 A detailed step-by-step tutorial on how to implement a Hello World web service starting from a WSDL and using Apache CXF and Spring Boot.
 
-[https://www.codenotfound.com/2016/10/cxf-spring-boot-soap-web-service-client-server-example.html](https://www.codenotfound.com/2016/10/cxf-spring-boot-soap-web-service-client-server-example.html)
+[https://www.codenotfound.com/apache-cxf-spring-boot-soap-web-service-client-server-example.html](https://www.codenotfound.com/apache-cxf-spring-boot-soap-web-service-client-server-example.html)

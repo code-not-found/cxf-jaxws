@@ -10,7 +10,7 @@
 
   <name>cxf-jaxws-helloworld-example</name>
   <description>Apache CXF - Spring Boot SOAP Web Service Client Server Example</description>
-  <url>https://www.codenotfound.com/2016/10/cxf-spring-boot-soap-web-service-client-server-example.html</url>
+  <url>https://www.codenotfound.com/apache-cxf-spring-boot-soap-web-service-client-server-example.html</url>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
