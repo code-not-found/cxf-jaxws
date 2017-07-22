@@ -1,0 +1,29 @@
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+      </pattern>
+    </encoder>
+  </appender>
+
+  <logger name="com.codenotfound" level="INFO" />
+  <logger name="org.apache.cxf" level="WARN" />
+  <logger name="org.springframework" level="WARN" />
+
+  <!-- INFO level needed to log the SOAP messages -->
+  <logger name="org.apache.cxf.services" level="INFO" />
+
+  <!-- fine tune individual service logging -->
+  <logger name="org.apache.cxf.services.TicketAgent.REQ_IN"
+    level="WARN" />
+  <logger name="org.apache.cxf.services.TicketAgent.RESP_IN"
+    level="WARN" />
+  <logger name="org.apache.cxf.services.TicketAgent.FAULT_IN"
+    level="WARN" />
+
+  <root level="WARN">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>
