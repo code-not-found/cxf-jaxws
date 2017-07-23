@@ -1,0 +1,32 @@
+package com.codenotfound.client;
+
+import java.math.BigInteger;
+import java.util.List;
+
+import org.example.ticketagent.ListFlightsSoapHeaders;
+import org.example.ticketagent.ObjectFactory;
+import org.example.ticketagent.TFlightsResponse;
+import org.example.ticketagent.TListFlights;
+import org.example.ticketagent_wsdl11.TicketAgent;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
+public class TicketAgentClient {
+
+  @Autowired
+  private TicketAgent ticketAgentProxy;
+
+  public List<BigInteger> listFlights() {
+    ObjectFactory factory = new ObjectFactory();
+    TListFlights tListFlights = factory.createTListFlights();
+
+    // create the SOAP header
+    ListFlightsSoapHeaders listFlightsSoapHeaders = factory.createListFlightsSoapHeaders();
+    listFlightsSoapHeaders.setClientId("abc123");
+
+    TFlightsResponse response = ticketAgentProxy.listFlights(tListFlights, listFlightsSoapHeaders);
+
+    return response.getFlightNumber();
+  }
+}
