@@ -17,13 +17,13 @@ public class TicketAgentClient {
   @Autowired
   private TicketAgent ticketAgentProxy;
 
-  public List<BigInteger> listFlights() {
+  public List<BigInteger> listFlights(String clientId) {
     ObjectFactory factory = new ObjectFactory();
     TListFlights tListFlights = factory.createTListFlights();
 
     // create the SOAP header
     TListFlightsHeader tListFlightsHeader = factory.createTListFlightsHeader();
-    tListFlightsHeader.setClientId("abc123");
+    tListFlightsHeader.setClientId(clientId);
 
     TFlightsResponse response = ticketAgentProxy.listFlights(tListFlights, tListFlightsHeader);
 

@@ -22,6 +22,6 @@ public class SpringCxfApplicationTests {
 
   @Test
   public void testListFlights() {
-    assertThat(ticketAgentClient.listFlights().get(1)).isEqualTo(BigInteger.valueOf(202));
+    assertThat(ticketAgentClient.listFlights("abc123").get(1)).isEqualTo(BigInteger.valueOf(202));
   }
 }
