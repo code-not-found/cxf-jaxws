@@ -1,7 +1,7 @@
-# cxf-jaxws-ticketagent
+# cxf-jaxws-soap-header
 
-[![Quality Gate](https://sonarqube.com/api/badges/gate?key=com.codenotfound:cxf-jaxws-ticketagent)](https://sonarqube.com/dashboard/index/com.codenotfound:cxf-jaxws-ticketagent)
+[![Quality Gate](https://sonarqube.com/api/badges/gate?key=com.codenotfound:cxf-jaxws-soap-header)](https://sonarqube.com/dashboard/index/com.codenotfound:cxf-jaxws-soap-header)
 
-Apache CXF - JAX-WS Ticket Agent project based on the TicketAgent.wsdl example from the [W3C WSDL 1.1 specification](https://www.w3.org/TR/wsdl11elementidentifiers/#Iri-ref-ex).
+A detailed step-by-step tutorial on how to add and get a SOAP header using Apache CXF and Spring Boot.
 
-[https://www.codenotfound.com/cxf-jaxws/](https://www.codenotfound.com/cxf-jaxws/)
+[https://www.codenotfound.com/apache-cxf-soap-header-example.html](https://www.codenotfound.com/apache-cxf-soap-header-example.html)
