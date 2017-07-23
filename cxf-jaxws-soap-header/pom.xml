@@ -61,7 +61,8 @@
                 <wsdlOption>
                   <wsdl>${project.basedir}/src/main/resources/wsdl/ticketagent.wsdl</wsdl>
                   <wsdlLocation>classpath:wsdl/ticketagent.wsdl</wsdlLocation>
-                  <extendedSoapHeaders>true</extendedSoapHeaders>                  
+                  <!-- enables processing of implicit SOAP headers, default is false -->
+                  <extendedSoapHeaders>true</extendedSoapHeaders>
                 </wsdlOption>
               </wsdlOptions>
             </configuration>

@@ -3,10 +3,10 @@ package com.codenotfound.client;
 import java.math.BigInteger;
 import java.util.List;
 
-import org.example.ticketagent.ListFlightsSoapHeaders;
 import org.example.ticketagent.ObjectFactory;
 import org.example.ticketagent.TFlightsResponse;
 import org.example.ticketagent.TListFlights;
+import org.example.ticketagent.TListFlightsHeader;
 import org.example.ticketagent_wsdl11.TicketAgent;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -22,10 +22,10 @@ public class TicketAgentClient {
     TListFlights tListFlights = factory.createTListFlights();
 
     // create the SOAP header
-    ListFlightsSoapHeaders listFlightsSoapHeaders = factory.createListFlightsSoapHeaders();
-    listFlightsSoapHeaders.setClientId("abc123");
+    TListFlightsHeader tListFlightsHeader = factory.createTListFlightsHeader();
+    tListFlightsHeader.setClientId("abc123");
 
-    TFlightsResponse response = ticketAgentProxy.listFlights(tListFlights, listFlightsSoapHeaders);
+    TFlightsResponse response = ticketAgentProxy.listFlights(tListFlights, tListFlightsHeader);
 
     return response.getFlightNumber();
   }
