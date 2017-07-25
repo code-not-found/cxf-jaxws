@@ -9,7 +9,7 @@
   <packaging>jar</packaging>
 
   <name>cxf-jaxws-soap-header</name>
-  <description>Spring WS - SOAP Header Example</description>
+  <description>Apache CXF - SOAP Header Example</description>
   <url>https://www.codenotfound.com/apache-cxf-soap-header-example.html</url>
 
   <parent>

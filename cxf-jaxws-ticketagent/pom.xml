@@ -9,7 +9,7 @@
   <packaging>jar</packaging>
 
   <name>cxf-jaxws-ticketagent</name>
-  <description>Spring WS - Ticket Agent Example</description>
+  <description>Apache CXF - Ticket Agent Example</description>
   <url>https://www.codenotfound.com/cxf-jaxws/</url>
 
   <parent>
