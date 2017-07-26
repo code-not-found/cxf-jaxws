@@ -12,6 +12,7 @@ addons:
       secure: $SONAR_TOKEN
 
 env:
+- PROJECT_DIR=cxf-jaxws-basic-authentication
 - PROJECT_DIR=cxf-jaxws-helloworld-example
 - PROJECT_DIR=cxf-jaxws-logging-logback
 - PROJECT_DIR=cxf-jaxws-soap-header-explicit
