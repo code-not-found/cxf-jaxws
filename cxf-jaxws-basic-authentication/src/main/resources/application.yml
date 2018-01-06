@@ -2,7 +2,7 @@ client:
   ticketagent:
     address: http://localhost:9090/codenotfound/ws/ticketagent
     user-name: codenotfound
-    password: p455w0rd
+    password: p455w0rdd
 
 security:
   user:

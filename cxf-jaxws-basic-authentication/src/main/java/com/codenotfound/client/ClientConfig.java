@@ -15,16 +15,17 @@ public class ClientConfig {
 
   @Value("${client.ticketagent.address}")
   private String address;
-  
+
   @Value("${client.ticketagent.user-name}")
   private String userName;
-  
+
   @Value("${client.ticketagent.password}")
   private String password;
 
   @Bean(name = "ticketAgentProxy")
   public TicketAgent ticketAgentProxy() {
-    JaxWsProxyFactoryBean jaxWsProxyFactoryBean = new JaxWsProxyFactoryBean();
+    JaxWsProxyFactoryBean jaxWsProxyFactoryBean =
+        new JaxWsProxyFactoryBean();
     jaxWsProxyFactoryBean.setServiceClass(TicketAgent.class);
     jaxWsProxyFactoryBean.setAddress(address);
 
@@ -38,7 +39,8 @@ public class ClientConfig {
 
   @Bean
   public HTTPConduit ticketAgentConduit() {
-    HTTPConduit httpConduit = (HTTPConduit) ticketAgentClientProxy().getConduit();
+    HTTPConduit httpConduit =
+        (HTTPConduit) ticketAgentClientProxy().getConduit();
     httpConduit.setAuthorization(basicAuthorization());
 
     return httpConduit;
@@ -46,7 +48,8 @@ public class ClientConfig {
 
   @Bean
   public AuthorizationPolicy basicAuthorization() {
-    AuthorizationPolicy authorizationPolicy = new AuthorizationPolicy();
+    AuthorizationPolicy authorizationPolicy =
+        new AuthorizationPolicy();
     authorizationPolicy.setUserName(userName);
     authorizationPolicy.setPassword(password);
     authorizationPolicy.setAuthorizationType("Basic");
