@@ -13,7 +13,8 @@ import org.example.ticketagent_wsdl11.TicketAgent;
 public class TicketAgentImpl implements TicketAgent {
 
   @Override
-  public TFlightsResponse listFlights(TListFlightsHeader header, TListFlights body) {
+  public TFlightsResponse listFlights(TListFlightsHeader header,
+      TListFlights body) {
     ObjectFactory factory = new ObjectFactory();
     TFlightsResponse response = factory.createTFlightsResponse();
     response.getFlightNumber().add(BigInteger.valueOf(101));
