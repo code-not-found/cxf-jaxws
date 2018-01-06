@@ -22,10 +22,12 @@ public class TicketAgentClient {
     TListFlights tListFlights = factory.createTListFlights();
 
     // create the SOAP header
-    TListFlightsHeader tListFlightsHeader = factory.createTListFlightsHeader();
+    TListFlightsHeader tListFlightsHeader =
+        factory.createTListFlightsHeader();
     tListFlightsHeader.setClientId(clientId);
 
-    TFlightsResponse response = ticketAgentProxy.listFlights(tListFlights, tListFlightsHeader);
+    TFlightsResponse response = ticketAgentProxy
+        .listFlights(tListFlights, tListFlightsHeader);
 
     return response.getFlightNumber();
   }
