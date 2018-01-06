@@ -16,7 +16,8 @@ public class EndpointConfig {
 
   @Bean
   public Endpoint endpoint() {
-    EndpointImpl endpoint = new EndpointImpl(bus, new TicketAgentImpl());
+    EndpointImpl endpoint =
+        new EndpointImpl(bus, new TicketAgentImpl());
     endpoint.publish("/ticketagent");
 
     return endpoint;

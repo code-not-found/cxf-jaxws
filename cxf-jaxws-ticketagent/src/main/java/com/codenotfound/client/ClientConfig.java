@@ -14,7 +14,8 @@ public class ClientConfig {
 
   @Bean(name = "ticketAgentProxy")
   public TicketAgent ticketAgentProxy() {
-    JaxWsProxyFactoryBean jaxWsProxyFactoryBean = new JaxWsProxyFactoryBean();
+    JaxWsProxyFactoryBean jaxWsProxyFactoryBean =
+        new JaxWsProxyFactoryBean();
     jaxWsProxyFactoryBean.setServiceClass(TicketAgent.class);
     jaxWsProxyFactoryBean.setAddress(address);
 

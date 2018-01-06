@@ -20,7 +20,8 @@ public class TicketAgentClient {
     ObjectFactory factory = new ObjectFactory();
     TListFlights tListFlights = factory.createTListFlights();
 
-    TFlightsResponse response = ticketAgentProxy.listFlights(tListFlights);
+    TFlightsResponse response =
+        ticketAgentProxy.listFlights(tListFlights);
 
     return response.getFlightNumber();
   }
