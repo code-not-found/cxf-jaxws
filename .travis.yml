@@ -13,9 +13,11 @@ addons:
 
 env:
 - PROJECT_DIR=cxf-jaxws-basic-authentication
+- PROJECT_DIR=cxf-jaxws-digital-signature
+- PROJECT_DIR=cxf-jaxws-https
 - PROJECT_DIR=cxf-jaxws-logging-logback
-- PROJECT_DIR=cxf-jaxws-soap-header-explicit
 - PROJECT_DIR=cxf-jaxws-soap-header
+- PROJECT_DIR=cxf-jaxws-soap-header-explicit
 - PROJECT_DIR=cxf-jaxws-spring-boot
 - PROJECT_DIR=cxf-jaxws-ticketagent
 
