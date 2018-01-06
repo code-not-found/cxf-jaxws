@@ -1,6 +1,5 @@
 package com.codenotfound.client;
 
-
 import org.apache.cxf.ext.logging.LoggingInInterceptor;
 import org.apache.cxf.ext.logging.LoggingOutInterceptor;
 import org.apache.cxf.jaxws.JaxWsProxyFactoryBean;
@@ -17,16 +16,20 @@ public class ClientConfig {
 
   @Bean(name = "ticketAgentProxy")
   public TicketAgent ticketAgentProxy() {
-    JaxWsProxyFactoryBean jaxWsProxyFactoryBean = new JaxWsProxyFactoryBean();
+    JaxWsProxyFactoryBean jaxWsProxyFactoryBean =
+        new JaxWsProxyFactoryBean();
     jaxWsProxyFactoryBean.setServiceClass(TicketAgent.class);
     jaxWsProxyFactoryBean.setAddress(address);
 
     // add an interceptor to log the outgoing request messages
-    jaxWsProxyFactoryBean.getOutInterceptors().add(loggingOutInterceptor());
+    jaxWsProxyFactoryBean.getOutInterceptors()
+        .add(loggingOutInterceptor());
     // add an interceptor to log the incoming response messages
-    jaxWsProxyFactoryBean.getInInterceptors().add(loggingInInterceptor());
+    jaxWsProxyFactoryBean.getInInterceptors()
+        .add(loggingInInterceptor());
     // add an interceptor to log the incoming fault messages
-    jaxWsProxyFactoryBean.getInFaultInterceptors().add(loggingInInterceptor());
+    jaxWsProxyFactoryBean.getInFaultInterceptors()
+        .add(loggingInInterceptor());
 
     return (TicketAgent) jaxWsProxyFactoryBean.create();
   }

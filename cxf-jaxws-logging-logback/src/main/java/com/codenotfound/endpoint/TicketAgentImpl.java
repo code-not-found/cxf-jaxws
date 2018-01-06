@@ -12,7 +12,8 @@ import org.example.ticketagent_wsdl11.TicketAgent;
 public class TicketAgentImpl implements TicketAgent {
 
   @Override
-  public TFlightsResponse listFlights(TListFlights request) throws ListFlightsFault {
+  public TFlightsResponse listFlights(TListFlights request)
+      throws ListFlightsFault {
     ObjectFactory factory = new ObjectFactory();
 
     if ("XYZ".equals(request.getStartCity())) {

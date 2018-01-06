@@ -20,7 +20,8 @@ public class EndpointConfig {
 
   @Bean
   public Endpoint endpoint() {
-    EndpointImpl endpoint = new EndpointImpl(bus(), new TicketAgentImpl());
+    EndpointImpl endpoint =
+        new EndpointImpl(bus(), new TicketAgentImpl());
     endpoint.publish("/ticketagent");
 
     return endpoint;
@@ -28,7 +29,8 @@ public class EndpointConfig {
 
   @Bean
   public Bus bus() {
-    cxfBus.setFeatures(new ArrayList<>(Arrays.asList(loggingFeature())));
+    cxfBus.setFeatures(
+        new ArrayList<>(Arrays.asList(loggingFeature())));
 
     return cxfBus;
   }
