@@ -15,27 +15,28 @@
   <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>1.5.4.RELEASE</version>
+    <version>1.5.9.RELEASE</version>
   </parent>
 
   <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <java.version>1.8</java.version>
 
-    <cxf.version>3.1.12</cxf.version>
+    <cxf.version>3.2.1</cxf.version>
   </properties>
 
   <dependencies>
-    <!-- cxf -->
-    <dependency>
-      <groupId>org.apache.cxf</groupId>
-      <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
-      <version>${cxf.version}</version>
-    </dependency>
     <!-- spring-boot -->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-test</artifactId>
       <scope>test</scope>
+    </dependency>
+    <!-- cxf -->
+    <dependency>
+      <groupId>org.apache.cxf</groupId>
+      <artifactId>cxf-spring-boot-starter-jaxws</artifactId>
+      <version>${cxf.version}</version>
     </dependency>
   </dependencies>
 
@@ -61,7 +62,8 @@
                 <wsdlOption>
                   <wsdl>${project.basedir}/src/main/resources/wsdl/ticketagent.wsdl</wsdl>
                   <wsdlLocation>classpath:wsdl/ticketagent.wsdl</wsdlLocation>
-                  <!-- enables processing of implicit SOAP headers, default is false -->
+                  <!-- enables processing of implicit SOAP headers, default 
+                    is false -->
                   <extendedSoapHeaders>true</extendedSoapHeaders>
                 </wsdlOption>
               </wsdlOptions>
