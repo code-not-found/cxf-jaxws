@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration>
+
+  <!-- PROPERTIES -->
+  <Properties>
+    <Property name="layout">%d{HH:mm:ss.SSS} %-5level
+      [%thread][%logger{0}] %m%n</Property>
+    <Property name="logFile">jaxws-jetty-cxf-logging-test</Property>
+    <Property name="logFile-ws">jaxws-jetty-cxf-logging-ws-test</Property>
+  </Properties>
+
+  <!-- APPENDERS -->
+  <Appenders>
+    <RollingFile name="APP_LOG_FILE" fileName="${logFile}.log"
+      filePattern="${logFile}.%d{yyyy-MM-dd}.log">
+      <TimeBasedTriggeringPolicy interval="1"
+        modulate="true" />
+      <DefaultRolloverStrategy max="30" />
+      <PatternLayout pattern="${layout}" />
+    </RollingFile>
+
+    <Console name="LOG_STDOUT" target="SYSTEM_OUT">
+      <PatternLayout pattern="${layout}" />
+    </Console>
+
+    <RollingFile name="WS_LOG_FILE" fileName="${logFile-ws}.log"
+      filePattern="${logFile-ws}.%d{yyyy-MM-dd}.log">
+      <TimeBasedTriggeringPolicy interval="1"
+        modulate="true" />
+      <DefaultRolloverStrategy max="30" />
+      <PatternLayout pattern="${layout}" />
+    </RollingFile>
+  </Appenders>
+
+  <!-- LOGGERS -->
+  <Loggers>
+    <Logger name="com.codenotfound.soap.http.cxf" level="DEBUG" />
+
+    <Logger name="org.springframework" level="WARN" />
+    <Logger name="org.apache.cxf" level="INFO" />
+
+    <!-- level INFO needed to log SOAP messages -->
+    <Logger name="org.apache.cxf.services" level="INFO"
+      additivity="false">
+      <!-- specify a dedicated appender for the SOAP messages -->
+      <AppenderRef ref="WS_LOG_FILE" />
+    </Logger>
+
+    <Root level="WARN">
+      <AppenderRef ref="APP_LOG_FILE" />
+      <AppenderRef ref="LOG_STDOUT" />
+    </Root>
+  </Loggers>
+
+</Configuration>
