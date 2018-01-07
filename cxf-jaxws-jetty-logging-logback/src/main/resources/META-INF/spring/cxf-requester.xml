@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:cxf="http://cxf.apache.org/core" xmlns:jaxws="http://cxf.apache.org/jaxws"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+  <!-- allows for ${} replacement in a spring XML configuration from a 
+    .properties file on the classpath -->
+  <context:property-placeholder location="classpath:cxf.properties" />
+
+  <jaxws:client id="helloWorldRequesterBean"
+    serviceClass="com.codenotfound.services.helloworld.HelloWorldPortType"
+    address="${helloworld.address}">
+  </jaxws:client>
+
+  <!-- abstractLoggingInterceptor that will enable pretty printing of messages -->
+  <bean id="abstractLoggingInterceptor" abstract="true">
+    <property name="prettyLogging" value="true" />
+  </bean>
+
+  <!-- logging interceptors that will log all received/sent messages -->
+  <bean id="loggingInInterceptor" class="org.apache.cxf.interceptor.LoggingInInterceptor"
+    parent="abstractLoggingInterceptor">
+  </bean>
+  <bean id="loggingOutInterceptor" class="org.apache.cxf.interceptor.LoggingOutInterceptor"
+    parent="abstractLoggingInterceptor">
+  </bean>
+
+  <!-- add the logging interceptors to the CXF bus -->
+  <cxf:bus>
+    <cxf:inInterceptors>
+      <ref bean="loggingInInterceptor" />
+    </cxf:inInterceptors>
+    <cxf:inFaultInterceptors>
+      <ref bean="loggingInInterceptor" />
+    </cxf:inFaultInterceptors>
+    <cxf:outInterceptors>
+      <ref bean="loggingOutInterceptor" />
+    </cxf:outInterceptors>
+    <cxf:outFaultInterceptors>
+      <ref bean="loggingOutInterceptor" />
+    </cxf:outFaultInterceptors>
+  </cxf:bus>
+
+</beans>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <!-- import the CXF requester configuration -->
+  <import resource="classpath:META-INF/spring/cxf-requester.xml" />
+
+  <!-- enables annotation based configuration -->
+  <context:annotation-config />
+  <!-- scans for annotated classes in the com.company package -->
+  <context:component-scan base-package="com.codenotfound.soap.http.cxf" />
+
+</beans>
