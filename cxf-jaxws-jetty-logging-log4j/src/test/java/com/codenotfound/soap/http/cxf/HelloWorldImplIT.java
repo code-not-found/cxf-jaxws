@@ -1,4 +1,4 @@
-package com.codenofound.soap.http.cxf;
+package com.codenotfound.soap.http.cxf;
 
 import static org.junit.Assert.assertEquals;
 
@@ -9,7 +9,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.codenotfound.services.helloworld.Person;
-import com.codenotfound.soap.http.cxf.HelloWorldClient;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
