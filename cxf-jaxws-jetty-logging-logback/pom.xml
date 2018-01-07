@@ -8,7 +8,7 @@
   <version>0.0.1-SNAPSHOT</version>
   <packaging>war</packaging>
 
-  <name>JAX-WS - CXF Log Request/Response SOAP Messages Logback</name>
+  <name>cxf-jaxws-jetty-logging-logback</name>
   <description>JAX-WS - CXF logging request and response SOAP messages using Log4j2</description>
   <url>https://codenotfound.com/2014/09/jaxws-cxf-log-request-response-soap-messages-logback.html</url>
 
