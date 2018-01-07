@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+  <!-- import the CXF requester configuration -->
+  <import resource="classpath:META-INF/spring/cxf-requester.xml" />
+
+  <!-- HelloWorldClient bean -->
+  <bean id="helloWorldClientBean" class="com.codenotfound.client.HelloWorldClient" />
+
+</beans>
