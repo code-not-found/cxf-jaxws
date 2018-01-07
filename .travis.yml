@@ -15,6 +15,7 @@ env:
 - PROJECT_DIR=cxf-jaxws-basic-authentication
 - PROJECT_DIR=cxf-jaxws-digital-signature
 - PROJECT_DIR=cxf-jaxws-https
+- PROJECT_DIR=cxf-jaxws-jetty-xml-config
 - PROJECT_DIR=cxf-jaxws-logging-logback
 - PROJECT_DIR=cxf-jaxws-soap-header
 - PROJECT_DIR=cxf-jaxws-soap-header-explicit
