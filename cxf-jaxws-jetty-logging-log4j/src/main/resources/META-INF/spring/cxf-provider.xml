@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cxf="http://cxf.apache.org/core"
+  xmlns:jaxws="http://cxf.apache.org/jaxws"
+  xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+http://cxf.apache.org/core http://cxf.apache.org/schemas/core.xsd
+http://cxf.apache.org/jaxws http://cxf.apache.org/schemas/jaxws.xsd">
+
+  <jaxws:endpoint id="helloWorldProviderBean"
+    implementor="com.codenotfound.soap.http.cxf.HelloWorldImpl"
+    address="/helloworld">
+  </jaxws:endpoint>
+
+  <!-- loggingFeature that will log all received/sent messages -->
+  <bean id="loggingFeature" class="org.apache.cxf.feature.LoggingFeature">
+    <property name="prettyLogging" value="true" />
+  </bean>
+
+  <!-- add the loggingFeature to the cxf bus -->
+  <cxf:bus>
+    <cxf:features>
+      <ref bean="loggingFeature" />
+    </cxf:features>
+  </cxf:bus>
+
+</beans>
